@@ -90,6 +90,7 @@ def main():
         row['diskusage'] = "{:.1f}".format(float(usage.free) / 1024 / 1024)
         row['memory'] = str(psutil.virtual_memory().percent)
         row['uuid'] = str(uuid2)
+        row['imagename'] = str(args.image)
 
         # Output JSON
         json_string = json.dumps(row)
