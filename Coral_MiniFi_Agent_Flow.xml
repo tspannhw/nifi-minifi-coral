@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>8e863ef1-5546-1aa6-228b-c5e7033d827f</groupId>
+    <name>Coral MiniFi Agent Flow</name>
+    <snippet>
+        <connections>
+            <id>7cccdb7a-eb30-30ba-0000-000000000000</id>
+            <parentGroupId>e6c03cad-a10c-3a1e-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>091f1aba-dad6-3623-0000-000000000000</groupId>
+                <id>ab3d8fbc-6206-3228-bbf4-73ef7f22c0e5</id>
+                <type>REMOTE_INPUT_PORT</type>
+                <versionedComponentId>60924763-0ac6-3acb-b17b-f42c12214f5b</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>e6c03cad-a10c-3a1e-0000-000000000000</groupId>
+                <id>310b731c-46bd-3235-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>310b731c-46bd-3235-879c-82a5ab9cb948</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>d65e9e60-8949-34c0-0000-000000000000</id>
+            <parentGroupId>e6c03cad-a10c-3a1e-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>091f1aba-dad6-3623-0000-000000000000</groupId>
+                <id>ab3d8fbc-6206-3228-bbf4-73ef7f22c0e5</id>
+                <type>REMOTE_INPUT_PORT</type>
+                <versionedComponentId>60924763-0ac6-3acb-b17b-f42c12214f5b</versionedComponentId>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>e6c03cad-a10c-3a1e-0000-000000000000</groupId>
+                <id>78358fc5-4d0d-3afd-0000-000000000000</id>
+                <type>PROCESSOR</type>
+                <versionedComponentId>78358fc5-4d0d-3afd-9949-ed66b89c3732</versionedComponentId>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <processors>
+            <id>310b731c-46bd-3235-0000-000000000000</id>
+            <parentGroupId>e6c03cad-a10c-3a1e-0000-000000000000</parentGroupId>
+            <position>
+                <x>452.6475352938012</x>
+                <y>0.0</y>
+            </position>
+            <versionedComponentId>310b731c-46bd-3235-879c-82a5ab9cb948</versionedComponentId>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Input Directory</key>
+                        <value>
+                            <name>Input Directory</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>File Filter</key>
+                        <value>
+                            <name>File Filter</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Filter</key>
+                        <value>
+                            <name>Path Filter</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>
+                            <name>Batch Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Keep Source File</key>
+                        <value>
+                            <name>Keep Source File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Recurse Subdirectories</key>
+                        <value>
+                            <name>Recurse Subdirectories</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Polling Interval</key>
+                        <value>
+                            <name>Polling Interval</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Ignore Hidden Files</key>
+                        <value>
+                            <name>Ignore Hidden Files</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Age</key>
+                        <value>
+                            <name>Minimum File Age</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Age</key>
+                        <value>
+                            <name>Maximum File Age</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Size</key>
+                        <value>
+                            <name>Minimum File Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Size</key>
+                        <value>
+                            <name>Maximum File Size</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Input Directory</key>
+                        <value>/opt/demo/images/</value>
+                    </entry>
+                    <entry>
+                        <key>File Filter</key>
+                        <value>[^\.].*</value>
+                    </entry>
+                    <entry>
+                        <key>Path Filter</key>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>10</value>
+                    </entry>
+                    <entry>
+                        <key>Keep Source File</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Recurse Subdirectories</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Polling Interval</key>
+                        <value>0 sec</value>
+                    </entry>
+                    <entry>
+                        <key>Ignore Hidden Files</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Age</key>
+                        <value>60 sec</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Age</key>
+                    </entry>
+                    <entry>
+                        <key>Minimum File Size</key>
+                        <value>200 B</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Size</key>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Retrieve Camera Images</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.GetFile</type>
+        </processors>
+        <processors>
+            <id>78358fc5-4d0d-3afd-0000-000000000000</id>
+            <parentGroupId>e6c03cad-a10c-3a1e-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.30055098438174355</y>
+            </position>
+            <versionedComponentId>78358fc5-4d0d-3afd-9949-ed66b89c3732</versionedComponentId>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Command</key>
+                        <value>
+                            <name>Command</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Command Arguments</key>
+                        <value>
+                            <name>Command Arguments</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Batch Duration</key>
+                        <value>
+                            <name>Batch Duration</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Redirect Error Stream</key>
+                        <value>
+                            <name>Redirect Error Stream</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Working Directory</key>
+                        <value>
+                            <name>Working Directory</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Argument Delimiter</key>
+                        <value>
+                            <name>Argument Delimiter</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Command</key>
+                        <value>/opt/demo/run.sh</value>
+                    </entry>
+                    <entry>
+                        <key>Command Arguments</key>
+                    </entry>
+                    <entry>
+                        <key>Batch Duration</key>
+                    </entry>
+                    <entry>
+                        <key>Redirect Error Stream</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Working Directory</key>
+                    </entry>
+                    <entry>
+                        <key>Argument Delimiter</key>
+                        <value> </value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>10 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Run Tensorflow Lite</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.ExecuteProcess</type>
+        </processors>
+        <remoteProcessGroups>
+            <id>091f1aba-dad6-3623-0000-000000000000</id>
+            <parentGroupId>e6c03cad-a10c-3a1e-0000-000000000000</parentGroupId>
+            <position>
+                <x>170.66604366763636</x>
+                <y>376.49674086475284</y>
+            </position>
+            <versionedComponentId>091f1aba-dad6-3623-bb30-014e18926c81</versionedComponentId>
+            <comments></comments>
+            <communicationsTimeout>60 sec</communicationsTimeout>
+            <contents>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01302-3dd4-1e3b-0c46-f0f2142def93</id>
+                    <name>Images In</name>
+                    <targetId>3df7d6b5-6df6-3987-f6b9-684ff4a5514c</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>03970705-f345-33f3-9c5e-462d05cc32bf</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>true</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>ab3d8fbc-6206-3228-bbf4-73ef7f22c0e5</id>
+                    <name>Coral Input</name>
+                    <targetId>86a038d1-5b26-1ea4-d2a1-91a5c206e455</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>true</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>60924763-0ac6-3acb-b17b-f42c12214f5b</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01303-3dd4-1e3b-c33c-94cbd9911ff6</id>
+                    <name>Garden Input</name>
+                    <targetId>e6e4d42b-e808-3fd0-dcd0-3bb20ff2c09f</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>cf358df9-b603-30a1-a156-6f5c0cdaf76d</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01304-3dd4-1e3b-615a-d246f6d78a0e</id>
+                    <name>Movidius Input</name>
+                    <targetId>01605246-374d-3747-3ec7-c8fbcc684fd6</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>7e225411-ec17-3ee0-a6cf-b363545264ac</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01305-3dd4-1e3b-a4ec-8a5961374bb6</id>
+                    <name>MiniFi Rainbow</name>
+                    <targetId>e9c87070-e069-3c1f-7f66-9c9d9c0900ef</targetId>
+                    <targetRunning>false</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>3ecff514-5e71-37ce-b70e-901546b2ac7d</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01306-3dd4-1e3b-6f4f-f0847d93635b</id>
+                    <name>Beacon In</name>
+                    <targetId>7160ff61-777c-38ef-eea0-6b6e1861b9ef</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>f46168b9-aaa0-3bdc-b75a-2de9ab72d9ac</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01307-3dd4-1e3b-e5c7-c4edfb14c07f</id>
+                    <name>Garden Images</name>
+                    <targetId>b97d72f7-d594-3662-2834-bec2ac1788cf</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>9500e6e9-5e76-341b-b74b-60558277871d</versionedComponentId>
+                </inputPorts>
+                <inputPorts>
+                    <batchSettings/>
+                    <comments></comments>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>false</connected>
+                    <exists>true</exists>
+                    <groupId>80d01301-3dd4-1e3b-4301-185ac6dce149</groupId>
+                    <id>80d01308-3dd4-1e3b-0e80-543ff11303b7</id>
+                    <name>Garden</name>
+                    <targetId>8f819954-bf56-341c-aef0-e26d977d6e4c</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>false</transmitting>
+                    <useCompression>false</useCompression>
+                    <versionedComponentId>c384bd0c-a53b-384d-8d0e-71bfa2ab6b0a</versionedComponentId>
+                </inputPorts>
+            </contents>
+            <proxyHost></proxyHost>
+            <proxyUser></proxyUser>
+            <targetUri>http://hw13125.local:8080/nifi</targetUri>
+            <targetUris>http://hw13125.local:8080/nifi</targetUris>
+            <transportProtocol>HTTP</transportProtocol>
+            <yieldDuration>10 sec</yieldDuration>
+        </remoteProcessGroups>
+    </snippet>
+    <timestamp>03/09/2019 16:16:12 EST</timestamp>
+</template>

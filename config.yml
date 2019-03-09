@@ -1,0 +1,167 @@
+MiNiFi Config Version: 3
+Flow Controller:
+  name: Coral MiniFi Agent Flow
+  comment: ''
+Core Properties:
+  flow controller graceful shutdown period: 10 sec
+  flow service write delay interval: 500 ms
+  administrative yield duration: 30 sec
+  bored yield duration: 10 millis
+  max concurrent threads: 1
+  variable registry properties: ''
+FlowFile Repository:
+  partitions: 256
+  checkpoint interval: 2 mins
+  always sync: false
+  Swap:
+    threshold: 20000
+    in period: 5 sec
+    in threads: 1
+    out period: 5 sec
+    out threads: 4
+Content Repository:
+  content claim max appendable size: 10 MB
+  content claim max flow files: 100
+  always sync: false
+Provenance Repository:
+  provenance rollover time: 1 min
+  implementation: org.apache.nifi.provenance.MiNiFiPersistentProvenanceRepository
+Component Status Repository:
+  buffer size: 1440
+  snapshot frequency: 1 min
+Security Properties:
+  keystore: ''
+  keystore type: ''
+  keystore password: ''
+  key password: ''
+  truststore: ''
+  truststore type: ''
+  truststore password: ''
+  ssl protocol: ''
+  Sensitive Props:
+    key:
+    algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+    provider: BC
+Processors:
+- id: 310b731c-46bd-3235-0000-000000000000
+  name: Retrieve Camera Images
+  class: org.apache.nifi.processors.standard.GetFile
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Batch Size: '10'
+    File Filter: '[^\.].*'
+    Ignore Hidden Files: 'false'
+    Input Directory: /opt/demo/images/
+    Keep Source File: 'false'
+    Maximum File Age:
+    Maximum File Size:
+    Minimum File Age: 60 sec
+    Minimum File Size: 200 B
+    Path Filter:
+    Polling Interval: 0 sec
+    Recurse Subdirectories: 'true'
+- id: 78358fc5-4d0d-3afd-0000-000000000000
+  name: Run Tensorflow Lite
+  class: org.apache.nifi.processors.standard.ExecuteProcess
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 10 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Argument Delimiter: ' '
+    Batch Duration:
+    Command: /opt/demo/run.sh
+    Command Arguments:
+    Redirect Error Stream: 'false'
+    Working Directory:
+Controller Services: []
+Process Groups: []
+Input Ports: []
+Output Ports: []
+Funnels: []
+Connections:
+- id: 7cccdb7a-eb30-30ba-0000-000000000000
+  name: Retrieve Camera Images/success/86a038d1-5b26-1ea4-d2a1-91a5c206e455
+  source id: 310b731c-46bd-3235-0000-000000000000
+  source relationship names:
+  - success
+  destination id: 86a038d1-5b26-1ea4-d2a1-91a5c206e455
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: d65e9e60-8949-34c0-0000-000000000000
+  name: Run Tensorflow Lite/success/86a038d1-5b26-1ea4-d2a1-91a5c206e455
+  source id: 78358fc5-4d0d-3afd-0000-000000000000
+  source relationship names:
+  - success
+  destination id: 86a038d1-5b26-1ea4-d2a1-91a5c206e455
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+Remote Process Groups:
+- id: 091f1aba-dad6-3623-0000-000000000000
+  name: ''
+  url: http://hw13125.local:8080/nifi
+  comment: ''
+  timeout: 60 sec
+  yield period: 10 sec
+  transport protocol: HTTP
+  proxy host: ''
+  proxy port: ''
+  proxy user: ''
+  proxy password: ''
+  local network interface: ''
+  Input Ports:
+  - id: 3df7d6b5-6df6-3987-f6b9-684ff4a5514c
+    name: Images In
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: 86a038d1-5b26-1ea4-d2a1-91a5c206e455
+    name: Coral Input
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: e6e4d42b-e808-3fd0-dcd0-3bb20ff2c09f
+    name: Garden Input
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: 01605246-374d-3747-3ec7-c8fbcc684fd6
+    name: Movidius Input
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: e9c87070-e069-3c1f-7f66-9c9d9c0900ef
+    name: MiniFi Rainbow
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: 7160ff61-777c-38ef-eea0-6b6e1861b9ef
+    name: Beacon In
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: b97d72f7-d594-3662-2834-bec2ac1788cf
+    name: Garden Images
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  - id: 8f819954-bf56-341c-aef0-e26d977d6e4c
+    name: Garden
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  Output Ports: []
+NiFi Properties Overrides: {}
