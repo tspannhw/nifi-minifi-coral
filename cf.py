@@ -87,10 +87,10 @@ def main():
         row['runtime'] = '{0:.2f}'.format(end - start)
         row['systemtime'] = datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S')
         row['starttime'] = str(starttime)
-        row['diskusage'] = "{:.1f}".format(float(usage.free) / 1024 / 1024)
+        row['diskfree'] = "{:.1f}".format(float(usage.free) / 1024 / 1024)
         row['memory'] = str(psutil.virtual_memory().percent)
         row['uuid'] = str(uuid2)
-        row['imagename'] = str(args.image)
+        row['imagename'] = str(os.path.basename(args.image))
 
         # Output JSON
         json_string = json.dumps(row)
@@ -113,15 +113,11 @@ def main():
             # Load the FredokaOne font
             font = ImageFont.truetype(FredokaOne, 18)
 
-            # draw date
-            draw.text((0, 0), inkydatetime, inky_display.RED, font=font)
-
-            # draw key data
+            # draw data
+            draw.text((0, 0), "{}".format(row['imagename']), inky_display.RED, font=font)
             draw.text((0, 22), "{}".format(row['ipaddress']), inky_display.RED, font=font)
-
-            draw.text((0, 44), "{}".format(row['systemtime']), inky_display.RED, font=font)
-
-            draw.text((0, 66), "{}".format(row['label_1']), inky_display.RED, font=font)
+            draw.text((0, 44), "{}".format(row['label_1']), inky_display.RED, font=font)
+            draw.text((0, 66), "{}".format(row['systemtime']), inky_display.RED, font=font)
 
             # Display the data on Inky pHAT
             inky_display.set_image(img)
